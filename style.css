@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.dropdown input {
+    padding: 8px;
+    width: 200px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dropdown-list {
+    position: absolute;
+    z-index: 1;
+    background: white;
+    border: 1px solid #ccc;
+    width: 300px;
+    display: none;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown-list .group {
+    font-weight: bold;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-list div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.dropdown-list div:hover {
+    background: #f1f1f1;
+}
+
+.node {
+    stroke: #333;
+    stroke-width: 1px;
+}
+
+.link {
+    stroke: #666;
+    stroke-width: 0.8px;
+}
+
+.arrowhead {
+    fill: #666;
+}
+
+.highlighted {
+    stroke: black; /* Цвет для выделения рёбер */
+    stroke-width: 3; /* Ширина обводки рёбер */
+}
+
+.highlighted-node {
+    stroke: black; /* Цвет для выделения обводки узлов */
+    stroke-width: 3; /* Ширина обводки узлов */
+}
+
+.legend {
+    margin-top: 20px;
+}
+
+.legend rect {
+    width: 20px;
+    height: 20px;
+    stroke: #333;
+    stroke-width: 1px;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+    display: none; /* Скрыть по умолчанию */
+    font-size: 12px;
+    z-index: 10;
+}
+
+.label {
+    font-size: 10px; /* Уменьшение размера шрифта для названий узлов */
+}

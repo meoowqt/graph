@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструмент для графовой аналитики</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+    <center>
+        <h2>Инструмент для графовой аналитики</h2>
+        <button onclick="resetGraph()">Сбросить граф</button>
+    </center>
+    <div>
+        <label for="startNode">Выбрать начальный узел:</label>
+        <div class="dropdown">
+            <input type="text" id="startNodeSearch" placeholder="Начальный узел..." oninput="filterOptions('startNodeList', 'startNodeSearch')" onclick="toggleDropdown('startNodeList')">
+            <div id="startNodeList" class="dropdown-list">
+            </div>
+        </div>
+
+        <label for="endNode">Выбрать конечный узел:</label>
+        <div class="dropdown">
+            <input type="text" id="endNodeSearch" placeholder="Конечный узел..." oninput="filterOptions('endNodeList', 'endNodeSearch')" onclick="toggleDropdown('endNodeList')">
+            <div id="endNodeList" class="dropdown-list">
+            </div>
+        </div>
+
+        <button id="findPathButton" onclick="findPathOptimized()">Найти путь</button>
+    </div>
+
+    <div>
+        <label for="groupNodeSelect">Выделить узлы по группам:</label>
+        <div class="dropdown">
+            <input type="text" id="groupNodeSearch" placeholder="Группа..." oninput="filterOptions('groupNodeList', 'groupNodeSearch')" onclick="toggleDropdown('groupNodeList')">
+            <div id="groupNodeList" class="dropdown-list"></div>
+        </div>
+    </div>
+
+    <div class="graph-container">
+        <svg></svg>
+    </div>
+    <div class="filter-container"></div>
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
